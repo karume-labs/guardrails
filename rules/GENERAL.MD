@@ -26,8 +26,8 @@ export default function formatSlug(title: string) {
 - Strict mode always. No `any`, no `@ts-ignore`, no `as unknown` casts.
 - Prefer `interface` for object shapes (prop types, DTOs) and `type` for
   unions, intersections, and mapped types.
-- Derive types from Zod / Drizzle schemas instead of hand-maintaining
-  duplicates (see `rules/API-CONTRACT.MD`).
+- Derive types from Zod / TypeBox / Drizzle schemas instead of hand-maintaining
+  duplicates (see `rules/API-CONTRACT.MD` and `rules/VALIDATION.MD`).
 
 ## Imports
 
@@ -64,7 +64,7 @@ import { gamesQueryKeys } from "./../../../../features/games/keys";
 ## Environment variables
 
 - Centralize env parsing per package in an `env/index.ts`. Never read
-  `process.env` inline. See the acme/`@shared/env` convention.
+  `process.env` inline. See `rules/ENV-VARS.MD`.
 
 ## Always finish with verification
 
