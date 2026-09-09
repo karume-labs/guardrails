@@ -1,6 +1,6 @@
 # Elysia + Eden Example
 
-Snippets adapted from `acme`. Copy these shapes for a standalone
+Snippets for a standalone
 Bun API + Next.js web app backed by Elysia + Eden Treaty.
 
 ## 1. Feature router
@@ -23,7 +23,7 @@ export const productsRouter = new Elysia({ prefix: "/products" })
   })
   // guarded section: middleware on the shared chain
   .use(isAdmin)
-  .post("/", async ({ body }) => createProduct(body as Record<string, unknown>), {
+  .post("/", async ({ body }) => createProduct(body), {
     body: createProductBody,
   });
 ```

@@ -1,6 +1,6 @@
 # oRPC Stack Example
 
-Snippets adapted from `acme-stack`. Copy these shapes for a
+Snippets for a
 Next.js + oRPC + TanStack Query project.
 
 ## 1. Server entry
@@ -106,8 +106,7 @@ import type { RouterClient } from "@orpc/server";
 import type { RootRouter } from "@/orpc/root-router";
 import { env } from "@/shared/env";
 
-const baseURL = env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
-const rpcLink = new RPCLink({ url: `${baseURL}/api/server` });
+const rpcLink = new RPCLink({ url: `${env.NEXT_PUBLIC_API_URL}/api/server` });
 
 type Client = RouterClient<RootRouter>;
 

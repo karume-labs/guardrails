@@ -61,9 +61,14 @@ export const env = data as Static<typeof envSchema>;
 
 ## Rules
 
-1. No raw `process.env` outside the package's `env/index.ts`.
+1. **`process.env` is restricted to env modules only** (`env/index.ts` and
+   their direct validators). No other file — router, service, hook, config,
+   component — may read `process.env`. Everywhere else, import the validated
+   `env` object and read from it.
 2. Never default secrets; default only harmless values (`PORT`, `NODE_ENV`).
 3. Prefix client-exposed vars with `NEXT_PUBLIC_` and never put secrets in
    them.
 4. `NODE_ENV` drives prod-only behavior (error leaking, logging) — read it
    from `env`, never from `process.env` at call sites.
+5. Env values are validated and non-null by type — never add a `|| "..."` /
+   `?? "..."` fallback at the call site (see `rules/FALLBACKS.MD`).

@@ -28,6 +28,9 @@ export default function formatSlug(title: string) {
   unions, intersections, and mapped types.
 - Derive types from Zod / TypeBox / Drizzle schemas instead of hand-maintaining
   duplicates (see `rules/API-CONTRACT.MD` and `rules/VALIDATION.MD`).
+- **No fallbacks or casts on already-typed values.** With end-to-end type
+  safety, contract-typed data and validated env need neither `??`/`||` nor
+  `as`. See `rules/FALLBACKS.MD`.
 
 ## Imports
 

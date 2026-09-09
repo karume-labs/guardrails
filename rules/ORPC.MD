@@ -1,6 +1,6 @@
 # oRPC Rule
 
-Folder structure derived from the `acme-stack` codebase.
+Folder structure for the oRPC codebase.
 oRPC embeds RPC procedures directly into Next.js routes.
 
 ## Directory layout

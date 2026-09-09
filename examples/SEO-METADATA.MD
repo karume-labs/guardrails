@@ -1,6 +1,6 @@
 # SEO Metadata Example
 
-Pattern from `acme`: a root metadata config applied via the
+A root metadata config applied via the
 Next.js Metadata API, plus a `SEOConfig` component that injects
 JSON-LD structured data.
 

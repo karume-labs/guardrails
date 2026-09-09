@@ -15,7 +15,7 @@ exactly one library per project (Mantine or shadcn) and stay consistent.
    colors, radii, and tokens once in the theme provider and reference them
    from everywhere.
 
-## Mantine projects (acme style)
+## Mantine projects (Mantine style)
 
 - Use Mantine components exclusively: `Button`, `Card`, `Group`, `Stack`,
   `Grid`.
@@ -66,7 +66,7 @@ import { Grid, GridCol, Card, CardSection } from "@mantine/core";
 - Icons come from a single icon set (`@tabler/icons-react`). Follow icon
   stroke conventions (`size`, `stroke`).
 
-## shadcn projects (acme style)
+## shadcn projects (shadcn style)
 
 - shadcn components are generated into `src/shared/components/ui/`. Do not
   edit the generated primitives by hand.

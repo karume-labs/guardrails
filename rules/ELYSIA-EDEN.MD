@@ -1,6 +1,6 @@
 # Elysia + Eden Rule
 
-Folder structure derived from the `acme` monorepo. Use this stack
+Folder structure for an Elysia + Eden standalone API stack. Use this stack
 when the API runs as a standalone Bun server behind a proxy.
 
 ## Directory layout

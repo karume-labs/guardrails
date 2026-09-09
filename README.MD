@@ -12,8 +12,8 @@ agents can load exactly the guidance they need for a given task.
   sub-components)
 - **End-to-end type safety** - oRPC and Elysia via Eden Treaty (separate stacks,
   separate rules)
-- **Database** - Drizzle tables/relations/migrations and the `acme` seeding
-  pattern (feature seeders, data.json, root entry)
+- **Database** - Drizzle tables/relations/migrations and the feature-based
+  seeding pattern (feature seeders, data.json, root entry)
 - **Auth** - Better Auth, admin guards, protected routes
 - **Validation** - TypeBox for Elysia, Zod everywhere else
 - **Server state** - TanStack Query, centralized query keys
@@ -34,7 +34,9 @@ guardrails/
 
 ## Rules at a glance
 
+- `AGENT-USAGE.MD` — how agents load and apply these rules (read first).
 - `GENERAL.MD` — baseline TypeScript and code-organization conventions.
+- `FALLBACKS.MD` — no `??`/`||`/`as` on already-typed or validated values.
 - `NAMING.MD` — folders, files, and symbol naming (kebab-case, PascalCase).
 - `FEATURE-FOLDER.MD` — feature-first folders; API and web mirror each other.
 - `SEEDING.MD` — database seeding pattern (db-package only, data.json).

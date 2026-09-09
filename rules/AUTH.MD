@@ -1,8 +1,8 @@
 # Auth Rule
 
 Authentication and authorization live at the **API boundary**, not in
-components. Two stacks: Elysia middleware (acme) and oRPC server guards
-(acme). Session/auth setup uses Better Auth or the platform's native
+components. Two stacks: Elysia middleware and oRPC server guards
+Session/auth setup uses Better Auth or the platform's native
 auth; never hand-roll sessions.
 
 ## Auth setup

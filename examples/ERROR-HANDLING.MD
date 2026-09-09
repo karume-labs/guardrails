@@ -1,6 +1,6 @@
 # Error Handling Example
 
-Pattern from `acme` (Elysia) and `acme` (Eden client).
+Pattern from the Elysia (server) and Eden client stacks.
 Typed error classes flow through a single global handler and a
 normalizing client fetcher, so every caller sees one envelope.
 

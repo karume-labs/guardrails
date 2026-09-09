@@ -32,7 +32,7 @@ apps/web/src/features/
 - **No dot-notation filenames.** `auth.router.ts` is banned. Put role files in
   subdirectories: `auth/router/index.ts` or `auth/routers/index.ts`.
 - **Seeding lives in the db package**, never in app code. See
-  `rules/SEEDING.MD` for the `acme` pattern: feature seeders in
+  `rules/SEEDING.MD` for the seeding pattern: feature seeders in
   `packages/db/src/<feature>/seed/index.ts` composed from a
   `data.json` of building blocks, deterministic seeded-random,
   a root `packages/db/src/seed/index.ts` entry, `--<feature>`

@@ -14,7 +14,7 @@ packages/db/src/
   env/index.ts                # validated DATABASE_URL etc.
   utils.ts                    # lifecycleTimestamps and shared column defs
   migrations/                 # drizzle-kit generated SQL
-  seed/<feature>/             # acme seeding pattern (rules/SEEDING.MD)
+  seed/<feature>/             # feature seeding pattern (rules/SEEDING.MD)
 ```
 
 ## Table definitions

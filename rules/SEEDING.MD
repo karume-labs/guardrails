@@ -1,6 +1,6 @@
 # Seeding Rule
 
-Database seeding follows the `acme` pattern. Seeding is a
+Database seeding follows a feature-based pattern. Seeding is a
 db-package concern — never in app or client code.
 
 ## Location

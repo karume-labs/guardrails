@@ -5,19 +5,24 @@ projects in the organization. Read it fully before writing code.
 
 ## How to use this
 
-- Read `rules/*.MD` in order. Each file is self-contained and under 150 lines.
+- **Read `rules/AGENT-USAGE.MD` first** — it defines load order and the exact
+  task workflow for AI agents. This file is the entry point for agents.
+- Then read `rules/*.MD` in order. Each file is self-contained and under 150
+  lines.
 - Consult `examples/*.MD` for canonical, copy-ready code patterns.
-- When a rule and a refactor conflict, follow the rule. If a rule is ambiguous,
-  preserve the surrounding code's existing conventions.
+- When a rule and a refactor conflict, follow the rule. If a rule is
+  ambiguous, preserve the surrounding code's existing conventions.
 
 ## Rules index
 
 | File                                        | Scope                                        |
 | :------------------------------------------ | :------------------------------------------- |
+| `rules/AGENT-USAGE.MD`                      | How agents load + apply these rules          |
 | `rules/GENERAL.MD`                          | Functions, exports, imports, file size       |
+| `rules/FALLBACKS.MD`                        | No `??`/`||`/`as` on already-typed values    |
 | `rules/NAMING.MD`                           | Folders, files, symbols naming               |
 | `rules/FEATURE-FOLDER.MD`                   | Feature-based folder architecture            |
-| `rules/SEEDING.MD`                          | Database seeding (acme pattern)             |
+| `rules/SEEDING.MD`                          | Database seeding pattern                      |
 | `rules/DRIZZLE.MD`                          | Drizzle tables, relations, client, migrations|
 | `rules/ENV-VARS.MD`                         | Typed env parsing per package                |
 | `rules/VALIDATION.MD`                       | TypeBox (Elysia) vs Zod (elsewhere)          |
