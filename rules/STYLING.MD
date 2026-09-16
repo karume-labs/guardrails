@@ -27,3 +27,24 @@ exactly one library per project (Mantine or shadcn) and stay consistent.
   never raw hex.
 - Semantic tokens (`card`, `darkAnthracite`, `foreground`, `muted`) over
   positional ones, so dark mode and rebranding stay cheap.
+
+## No Inline Styles
+
+Inline styles (`style={{ ... }}`) are strictly forbidden. Always use the UI library's primitives, variants, style props, or proper components (e.g., use `next/image` instead of `img` tags).
+
+## Mobile Friendly Tables
+
+Tables must be designed with mobile devices in mind. Use the following techniques to ensure readability and usability on small screens:
+
+- **Horizontal Scrolling**: Wrap the table in a scrollable container so users can swipe through extra columns while keeping the layout intact.
+- **Sticky First Column**: Lock the leftmost label column in place during horizontal scrolling so users never lose context of what data they are reading.
+- **Column Stacking**: Transform wide columns into vertical rows or cards, stacking information top-to-bottom instead of side-to-side.
+- **Hiding Non-Essential Columns**: Use responsive breakpoints to hide secondary or low-priority columns on small screens, letting users focus on core data.
+- **Progressive Disclosure**: Move deep details into popups, expandable accordions, or separate pages rather than cramming them into the main table view.
+
+### Content and Styling Adjustments
+
+- **Prioritize Key Data**: Display only the two or three most critical columns (like item name and price) by default.
+- **Abbreviate and Iconize**: Shorten long text labels and replace repeated text words with simple icons (like a star or checkmark).
+- **Reduce Font Size**: Use smaller body text sizes and bold key values instead of headers to improve quick scanning.
+- **Simplify Rows**: Apply alternating background colors (zebra striping) and horizontal-only divider lines to guide the eye across compact rows.

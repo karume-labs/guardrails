@@ -69,6 +69,11 @@ import { gamesQueryKeys } from "./../../../../features/games/keys";
 - Centralize env parsing per package in an `env/index.ts`. Never read
   `process.env` inline. See `rules/ENV-VARS.MD`.
 
+## Banned Elements
+
+- **Emojis**: Do not use emojis in the UI or codebase unless explicitly requested by the user.
+- **Gradients**: Avoid using gradients in styling unless specifically asked to use a gradient.
+
 ## Always finish with verification
 
 When done editing, run the project's lint, format, and typecheck commands
