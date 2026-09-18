@@ -51,7 +51,7 @@ pre-commit:
       run: bun typecheck
 ```
 
-- `stage_fixed: true` re-stages files biome rewrites — never commit an
+- `stage_fixed: true` re-stages files biome rewrites - never commit an
   unformatted tree.
 - `bun typecheck` runs over the whole workspace, so keep it fast (~a few
   seconds) or scope it per commit.
@@ -60,9 +60,9 @@ pre-commit:
 
 After finishing a task:
 
-1. `bun format` — fix formatting.
-2. `bun lint` — fix lint issues (imports, types).
-3. `bun typecheck` — prove the type graph is sound.
+1. `bun format` - fix formatting.
+2. `bun lint` - fix lint issues (imports, types).
+3. `bun typecheck` - prove the type graph is sound.
 
 This is mandatory before declaring work done; the pre-commit hook is a
 backstop, not the primary gate.
@@ -71,4 +71,4 @@ backstop, not the primary gate.
 
 - The deploy workflow runs `bun install`, `bun lint`, `bun typecheck`,
   `bun build` before ship. See `.github/workflows/deploy.yml`.
-- Failing lint/typecheck blocks deploy — never bypass with `--no-verify`.
+- Failing lint/typecheck blocks deploy - never bypass with `--no-verify`.

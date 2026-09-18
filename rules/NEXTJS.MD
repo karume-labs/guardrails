@@ -47,7 +47,7 @@ App Router conventions for the web app.
 ## Layouts & providers
 
 - App providers (TanStack Provider, nuqs adapter) belong in the root layout or
-  a Providers component — wrap only the subtree that consumes them.
+  a Providers component - wrap only the subtree that consumes them.
 - Auth-guarded sections (`/admin`) wrap their UI in a layout that runs the
   guard server-side before rendering.
 

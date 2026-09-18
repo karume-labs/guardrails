@@ -47,5 +47,5 @@ locations without searching.
 ## Avoid
 
 - Abbreviations that aren't the domain language (`usr` vs `user`).
-- A single component/hook spread across several similarly named files —
+- A single component/hook spread across several similarly named files -
   split by role folder (`components/`, `services/`, `types/`).

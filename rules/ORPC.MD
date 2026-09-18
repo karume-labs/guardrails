@@ -56,7 +56,7 @@ export type RootRouter = typeof rootRouter;
 ## Input schemas
 
 - Put all input Zod schemas in `features/<feature>/types/index.ts`.
-- Procedures declare `.input(schema)` — infer with `z.infer`.
+- Procedures declare `.input(schema)` - infer with `z.infer`.
 - Keep per-resource schemas separate (`listGamesInputSchema`,
   `leaderboardInputSchema`) but co-locate them in the types file.
 

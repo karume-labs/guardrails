@@ -24,7 +24,7 @@ const [page, setPage] = useQueryState("page", parseAsInteger.withDefault(1));
 
 ## Server state (TanStack Query)
 
-- Server data is never "local state" — it goes through the query layer with
+- Server data is never "local state" - it goes through the query layer with
   central keys. See `rules/DATA-FETCHING.MD`.
 - Filters living in the URL become **query-key inputs**:
 
@@ -35,7 +35,7 @@ const query = useProducts(search); // key: ["products", search]
 
 ## Ephemeral UI state
 
-- Dialogs, toggles, hover, input caret — use `useState`/`useReducer` locally.
+- Dialogs, toggles, hover, input caret - use `useState`/`useReducer` locally.
 - Portal/confirm dialogs hold only the item being acted on, never copied data.
 
 ```ts

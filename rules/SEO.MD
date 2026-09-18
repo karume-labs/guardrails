@@ -56,7 +56,7 @@ const SEOConfig = () => (
 
 ## Client components
 
-- `page.tsx` stays a server component — metadata + SEOConfig render server-side.
+- `page.tsx` stays a server component - metadata + SEOConfig render server-side.
 - The `SEOConfig` component can be `"use client"` if it reads env; keep its
   markup minimal so it never becomes a hydration bottleneck.
 

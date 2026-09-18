@@ -48,6 +48,11 @@ import { orpcClient } from "@/shared/lib/orpc-client";
 import { gamesQueryKeys } from "./../../../../features/games/keys";
 ```
 
+- **No pure barrel files.** A file whose only purpose is importing things
+  from other modules and re-exporting them (e.g. an `index.ts` that is just
+  `export { … } from "./foo"`) is banned. Every file must contain real logic,
+  types, or declarations - not merely act as an import relay.
+
 ## File size limit
 
 - **No file exceeds ~150 lines.** Hard requirement.

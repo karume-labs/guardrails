@@ -121,7 +121,7 @@ export const errorHandlerPlugin = new Elysia({ name: "error-handler" })
 
 ## 4. Client-side normalization (Eden)
 
-The `fetcher` wraps transport errors into the same envelope — see
+The `fetcher` wraps transport errors into the same envelope - see
 `examples/ELYSIA-EDEN.MD` section 3. Callers never catch raw fetch
 failures:
 

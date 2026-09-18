@@ -34,27 +34,27 @@ guardrails/
 
 ## Rules at a glance
 
-- `AGENT-USAGE.MD` — how agents load and apply these rules (read first).
-- `GENERAL.MD` — baseline TypeScript and code-organization conventions.
-- `FALLBACKS.MD` — no `??`/`||`/`as` on already-typed or validated values.
-- `NAMING.MD` — folders, files, and symbol naming (kebab-case, PascalCase).
-- `FEATURE-FOLDER.MD` — feature-first folders; API and web mirror each other.
-- `SEEDING.MD` — database seeding pattern (db-package only, data.json).
-- `DRIZZLE.MD` — tables, relations, client, migrations.
-- `ENV-VARS.MD` — validated env parsing per package.
-- `VALIDATION.MD` — TypeBox for Elysia, Zod elsewhere.
-- `AUTH.MD` — Better Auth, admin guards, protected routes.
-- `REACT.MD` — arrow functions, named exports, props typing.
-- `NEXTJS.MD` — App Router, routing, metadata.
-- `STYLING.MD` — Mantine or shadcn; no `className`/`style` overrides.
-- `DATA-FETCHING.MD` — TanStack Query, query keys, colocation.
-- `API-CONTRACT.MD` — shared end-to-end type safety principles and error envelope.
-- `ORPC.MD` — oRPC stack (folder structure, root router, client).
-- `ELYSIA-EDEN.MD` — Elysia + Eden standalone API stack.
-- `STATE-MANAGEMENT.MD` — nuqs URL state.
-- `DATA-TABLES.MD` — TanStack Table + nuqs.
-- `SEO.MD` — SEO config component and metadata.
-- `TOOLING.MD` — Biome, typecheck, lefthook, CI.
+- `AGENT-USAGE.MD` - how agents load and apply these rules (read first).
+- `GENERAL.MD` - baseline TypeScript and code-organization conventions.
+- `FALLBACKS.MD` - no `??`/`||`/`as` on already-typed or validated values.
+- `NAMING.MD` - folders, files, and symbol naming (kebab-case, PascalCase).
+- `FEATURE-FOLDER.MD` - feature-first folders; API and web mirror each other.
+- `SEEDING.MD` - database seeding pattern (db-package only, data.json).
+- `DRIZZLE.MD` - tables, relations, client, migrations.
+- `ENV-VARS.MD` - validated env parsing per package.
+- `VALIDATION.MD` - TypeBox for Elysia, Zod elsewhere.
+- `AUTH.MD` - Better Auth, admin guards, protected routes.
+- `REACT.MD` - arrow functions, named exports, props typing.
+- `NEXTJS.MD` - App Router, routing, metadata.
+- `STYLING.MD` - Mantine or shadcn; no `className`/`style` overrides.
+- `DATA-FETCHING.MD` - TanStack Query, query keys, colocation.
+- `API-CONTRACT.MD` - shared end-to-end type safety principles and error envelope.
+- `ORPC.MD` - oRPC stack (folder structure, root router, client).
+- `ELYSIA-EDEN.MD` - Elysia + Eden standalone API stack.
+- `STATE-MANAGEMENT.MD` - nuqs URL state.
+- `DATA-TABLES.MD` - TanStack Table + nuqs.
+- `SEO.MD` - SEO config component and metadata.
+- `TOOLING.MD` - Biome, typecheck, lefthook, CI.
 
 ## How to evolve these rules
 

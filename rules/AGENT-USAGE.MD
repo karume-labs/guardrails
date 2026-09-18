@@ -25,7 +25,7 @@ available:
 
 ## 2. Load order (before writing code)
 
-1. Read `AGENTS.MD` — the index + hard rules.
+1. Read `AGENTS.MD` - the index + hard rules.
 2. Read the **always-on** set:
    - `GENERAL.MD` (baseline TS, imports, arrow functions, 150-line cap)
    - `NAMING.MD` (kebab-case, PascalCase components)
@@ -57,10 +57,10 @@ available:
    - `process.env` only inside `env/index.ts`; consume the validated `env`
      object everywhere else.
    - Filter/page/sort state lives in nuqs URL params.
-   - UI library owns styling — no `className`/`style` overrides.
+   - UI library owns styling - no `className`/`style` overrides.
 3. **Verify before finishing.** Run the Tooling checks:
    `bun format`, `bun lint`, `bun typecheck` (exact commands may differ per
-   project — check its package.json).
+   project - check its package.json).
 4. **Report honestly.** If a rule could not be followed (framework constraint,
    missing config), say so explicitly rather than silently deviating.
 

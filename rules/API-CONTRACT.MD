@@ -1,7 +1,7 @@
 # API Contract Rule
 
 End-to-end type safety is mandatory. The contract (input schemas + inferred
-return types) lives once — shared between server and client — so you never
+return types) lives once - shared between server and client - so you never
 hand-write a client type that duplicates the server.
 
 Two stacks are in use. **They have different folder structures. Pick one per

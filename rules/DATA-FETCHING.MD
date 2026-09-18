@@ -2,7 +2,7 @@
 
 All server state goes through **TanStack Query**. Every request between the
 frontend and backend goes through the **type-safe API client** (oRPC or Eden)
-— raw `fetch()` in components is banned.
+- raw `fetch()` in components is banned.
 
 ## Query keys
 
@@ -28,7 +28,7 @@ export const gamesQueryKeys = {
 
 Query hooks live in `features/<feature>/services/queries.ts`, mutations in
 `services/mutations.ts`, both `"use client"`. The typed client import
-depends on your stack — see `rules/ORPC.MD` (oRPC `orpcClient`) or
+depends on your stack - see `rules/ORPC.MD` (oRPC `orpcClient`) or
 `rules/ELYSIA-EDEN.MD` (Eden `api`).
 
 ```ts

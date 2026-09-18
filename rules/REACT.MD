@@ -25,7 +25,7 @@ export const StatusBadge = ({ label, tone = "success" }: StatusBadgeProps): Reac
 
 - Keep components under ~150 lines. Extract children when larger.
 - Prefer composition (children, slots) over prop bloat.
-- No nested component definitions inside a render body — define at module
+- No nested component definitions inside a render body - define at module
   scope so they are not recreated every render.
 
 ## Hooks

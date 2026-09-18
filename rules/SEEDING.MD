@@ -1,7 +1,7 @@
 # Seeding Rule
 
 Database seeding follows a feature-based pattern. Seeding is a
-db-package concern — never in app or client code.
+db-package concern - never in app or client code.
 
 ## Location
 

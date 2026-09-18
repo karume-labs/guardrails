@@ -114,5 +114,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   and override `title`/`description`.
 - Keep OpenGraph + Twitter + canonical in the base config so every page
   inherits it.
-- JSON-LD is per-page opt-in (`SEOConfig`) — add Organization,
+- JSON-LD is per-page opt-in (`SEOConfig`) - add Organization,
   BreadcrumbList, or Product schemas via the same pattern.

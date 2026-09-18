@@ -5,7 +5,7 @@ projects in the organization. Read it fully before writing code.
 
 ## How to use this
 
-- **Read `rules/AGENT-USAGE.MD` first** — it defines load order and the exact
+- **Read `rules/AGENT-USAGE.MD` first** - it defines load order and the exact
   task workflow for AI agents. This file is the entry point for agents.
 - Then read `rules/*.MD` in order. Each file is self-contained and under 150
   lines.

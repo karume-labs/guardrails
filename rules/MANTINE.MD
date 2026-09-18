@@ -1,7 +1,7 @@
 # Mantine Styling & UI Rules
 
 - Use Mantine components exclusively: `Button`, `Card`, `Group`, `Stack`, `Grid`.
-- **No dot notation for sub-components.** Mantine has moved away from `Grid.Col`, `Card.Section`, etc. — always import the sub-component directly as a top-level named export. `Grid.Col`/`Card.Section` are deprecated; `GridCol`/`CardSection` are the current form:
+- **No dot notation for sub-components.** Mantine has moved away from `Grid.Col`, `Card.Section`, etc. - always import the sub-component directly as a top-level named export. `Grid.Col`/`Card.Section` are deprecated; `GridCol`/`CardSection` are the current form:
 
 ```tsx
 // Good

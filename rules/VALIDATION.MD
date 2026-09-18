@@ -46,14 +46,14 @@ export type LeaderboardInput = z.infer<typeof leaderboardInputSchema>;
 
 ## Rules
 
-1. Never inline ad-hoc validators in handler bodies — schemas live in
+1. Never inline ad-hoc validators in handler bodies - schemas live in
    `types/` (or a shared `validators` package) and are reused on both sides.
 2. Prefer derived types (`Static`/`z.infer`) over hand-written interfaces to
    avoid drift.
 3. Strip validation internals from error responses in production (TypeBox
-   `Value.Errors`, failed payloads) — do not leak schema structure. Envelope
+   `Value.Errors`, failed payloads) - do not leak schema structure. Envelope
    shape in `examples/ERROR-HANDLING.MD`.
-4. Booleans: Elysia `t.Boolean()` / Zod `z.boolean()` only — never accept
+4. Booleans: Elysia `t.Boolean()` / Zod `z.boolean()` only - never accept
    `"true"`/`"false"` strings.
 5. Keep numeric ranges explicit (`minimum`/`maximum`); default rather than
    force callers to pass every field.

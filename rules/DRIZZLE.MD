@@ -52,7 +52,7 @@ export const subcategoriesRelations = relations(
 ```
 
 - FK columns `references(() => parentTable.id, { onDelete: "cascade" })`.
-- Keep `onDelete` semantics explicit — do not omit cascade on child tables.
+- Keep `onDelete` semantics explicit - do not omit cascade on child tables.
 
 ## Client
 
@@ -80,5 +80,5 @@ export const db = drizzle(queryClient, { schema });
 - Booleans default explicitly (`isOnSale: boolean("is_on_sale").default(false)`).
 - Use `uniqueIndex`/`.unique()` for slug- or code-uniqueness to mirror the
   domain constraint.
-- Query shapes are projected with `.select({...})` — never `select() *`
+- Query shapes are projected with `.select({...})` - never `select() *`
   unless the whole row is truly needed.
