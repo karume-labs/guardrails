@@ -2,6 +2,11 @@
 
 How an AI agent loads and applies these guardrails when working in a project.
 
+Keep the repository entry point named exactly `AGENTS.md`. Codex discovers that
+filename directly, and current Claude Code releases use it when no
+`CLAUDE.md` exists. A project-local `CLAUDE.md` remains that project's
+entry point; do not create a duplicate copy just for Claude Code.
+
 ## Why this file
 
 Reading correct, complete rules at the start of a task changes the code an
@@ -25,7 +30,7 @@ available:
 
 ## 2. Load order (before writing code)
 
-1. Read `AGENTS.MD` - the index + hard rules.
+1. Read `AGENTS.md` - the index + hard rules.
 2. Read the **always-on** set:
    - `GENERAL.MD` (baseline TS, imports, arrow functions, 150-line cap)
    - `NAMING.MD` (kebab-case, PascalCase components)
@@ -76,6 +81,6 @@ available:
 ## 5. When the repo evolves
 
 - Rules are split so a 150-line cap applies per file. When adding a rule,
-  update `AGENTS.MD` (the index) and `README.MD` (the human summary).
+  update `AGENTS.md` (the index) and `README.MD` (the human summary).
 - Re-run the guardrails synchronisation (section 1) after changes so every
   consuming project picks them up.
