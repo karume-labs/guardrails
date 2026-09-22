@@ -78,6 +78,7 @@ import { gamesQueryKeys } from "./../../../../features/games/keys";
 
 - **Emojis**: Do not use emojis in the UI or codebase unless explicitly requested by the user.
 - **Gradients**: Avoid using gradients in styling unless specifically asked to use a gradient.
+- **Historical Code Comments**: Do not write code comments that describe the history of changes, refactoring processes, or previous instructions (e.g., `// moved from utils.ts`, `// during the auth refactor`, `// Lauren said you should never do this`). Code comments should only explain complex code logic.
 
 ## Always finish with verification
 
