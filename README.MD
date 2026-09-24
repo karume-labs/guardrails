@@ -26,11 +26,25 @@ agents can load exactly the guidance they need for a given task.
 
 ```
 guardrails/
-├── AGENTS.MD          # Agent entry point. Read first.
+├── AGENTS.md          # Always-on agent entry point. Read first.
 ├── README.MD          # This file.
+├── .agents/skills/    # Codex-discoverable task workflow
 ├── rules/             # One discipline per file.
 └── examples/          # Canonical, copy-ready code patterns.
 ```
+
+## Agent entry points
+
+- `AGENTS.md` contains the always-on project guidance and rule index.
+- `.agents/skills/karume-guardrails/SKILL.md` routes a task to the smallest
+  relevant set of rules and examples.
+- `.claude/skills/karume-guardrails` points to the same skill directory for
+  Claude Code. The two agents use different project skill discovery paths, but
+  there is only one skill file to maintain.
+
+Claude Code reads `AGENTS.md` as a fallback when no `CLAUDE.md` exists. A
+project that already has `CLAUDE.md` should keep its existing entry point and
+point it at the guardrails as appropriate.
 
 ## Rules at a glance
 
@@ -59,7 +73,7 @@ guardrails/
 ## How to evolve these rules
 
 - Keep every rule file under ~150 lines. If a file grows, split the topic into
-  a new focused file and update `AGENTS.MD`.
+  a new focused file and update `AGENTS.md`.
 - Prefer concrete examples over abstract guidance. An LLM behaves more
   reliably when given a correct snippet to mirror.
 - When the stack changes (e.g. a new ORM or UI library), add a rule file rather

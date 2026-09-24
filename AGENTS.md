@@ -1,7 +1,10 @@
-# AGENTS.MD
+# AGENTS.md
 
 This repository is the **single source of truth** for coding standards across all
 projects in the organization. Read it fully before writing code.
+
+Keep this filename exact: Codex discovers `AGENTS.md` as the project instruction
+entry point, and Claude Code uses it when the project has no `CLAUDE.md`.
 
 ## How to use this
 
