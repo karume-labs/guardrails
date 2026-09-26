@@ -8,6 +8,7 @@ locations without searching.
 - **kebab-case** everywhere: `feature-folder`, `shared/lib`, `routers/`.
 - Folder names are singular (`cart/`, `user/`) unless inherently plural
   (`migrations/`).
+- **No single-file folders.** Do not create a folder if it will only contain one file (e.g., use `constants.ts` instead of `constants/index.ts`).
 
 ## Files
 
