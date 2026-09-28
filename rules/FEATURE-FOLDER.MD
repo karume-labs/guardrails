@@ -29,6 +29,7 @@ apps/web/src/features/
 
 - **Bundled by responsibility, not role.** `services/`, `schema/`, `router/`
   live inside the feature, colocated with the domain.
+- **No single-file folders.** If a folder would only contain a single file (e.g., `constants/index.ts`), just use a single file instead (`constants.ts`). Do not create a folder just to house one file.
 - **No dot-notation filenames.** `auth.router.ts` is banned. Put role files in
   subdirectories: `auth/router/index.ts` or `auth/routers/index.ts`.
 - **Seeding lives in the db package**, never in app code. See

@@ -21,6 +21,7 @@ entry point, and Claude Code uses it when the project has no `CLAUDE.md`.
 | File                                        | Scope                                        |
 | :------------------------------------------ | :------------------------------------------- |
 | `rules/AGENT-USAGE.MD`                      | How agents load + apply these rules          |
+| `rules/SKILL-CREATION.MD`                   | Guidance for creating and maintaining skills |
 | `rules/GENERAL.MD`                          | Functions, exports, imports, file size       |
 | `rules/FALLBACKS.MD`                        | No `??`/`||`/`as` on already-typed values    |
 | `rules/NAMING.MD`                           | Folders, files, symbols naming               |
