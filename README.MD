@@ -35,6 +35,7 @@ guardrails/
 ## Rules at a glance
 
 - `AGENT-USAGE.MD` - how agents load and apply these rules (read first).
+- `SKILL-CREATION.MD` - guidance for creating and maintaining AI skills.
 - `GENERAL.MD` - baseline TypeScript and code-organization conventions.
 - `FALLBACKS.MD` - no `??`/`||`/`as` on already-typed or validated values.
 - `NAMING.MD` - folders, files, and symbol naming (kebab-case, PascalCase).
@@ -64,3 +65,7 @@ guardrails/
   reliably when given a correct snippet to mirror.
 - When the stack changes (e.g. a new ORM or UI library), add a rule file rather
   than bolting it onto an existing one.
+
+## Credits
+
+- The principles for skill and rule creation were inspired by [this TikTok video](https://vt.tiktok.com/ZSbMBBdSj/) by Luciana.
