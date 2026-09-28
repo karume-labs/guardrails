@@ -5,7 +5,7 @@ How an AI agent loads and applies these guardrails when working in a project.
 Keep the repository entry point named exactly `AGENTS.md`. Codex discovers that
 filename directly, and current Claude Code releases use it when no
 `CLAUDE.md` exists. A project-local `CLAUDE.md` remains that project's
-entry point; do not create a duplicate copy just for Claude Code.
+entry point; rely on the existing file if present.
 
 ## Why this file
 
@@ -16,8 +16,8 @@ Codex, ...) is running.
 
 ## 1. Surface the rules into context
 
-Agents only follow rules that are actually in their context. Do **not**
-instruct the model to "clone the guardrails repo". Instead, make the content
+Agents only follow rules that are actually in their context. Instead of
+instructing the model to fetch external repositories, make the content directly
 available:
 
 - **Recommended:** mirror `rules/*.MD` + `examples/*.MD` into the working
@@ -53,16 +53,16 @@ available:
 1. **Survey first.** Read the relevant rules, then the surrounding repo code.
    Match existing conventions instead of guessing.
 2. **Apply while writing.**
-   - No relative imports; absolute aliases only.
+   - Use absolute aliases for all imports.
    - Arrow functions + named exports (`export const`).
    - Keep files under 150 lines; split on growth.
    - All data fetching through the typed client + TanStack Query.
-   - No `??`/`||`/`as` on validated env or contract-typed data
+   - Trust validated env or contract-typed data types natively without `??`/`||`/`as` fallbacks
      (`rules/FALLBACKS.MD`).
-   - `process.env` only inside `env/index.ts`; consume the validated `env`
+   - Restrict `process.env` usage to `env/index.ts`; consume the validated `env`
      object everywhere else.
    - Filter/page/sort state lives in nuqs URL params.
-   - UI library owns styling - no `className`/`style` overrides.
+   - Let the UI library own styling - rely on its built-in configuration over `className`/`style` overrides.
 3. **Verify before finishing.** Run the Tooling checks:
    `bun format`, `bun lint`, `bun typecheck` (exact commands may differ per
    project - check its package.json).

@@ -52,7 +52,7 @@ export const subcategoriesRelations = relations(
 ```
 
 - FK columns `references(() => parentTable.id, { onDelete: "cascade" })`.
-- Keep `onDelete` semantics explicit - do not omit cascade on child tables.
+- Keep `onDelete` semantics explicit - ensure cascade is included on child tables.
 
 ## Client
 
@@ -70,7 +70,7 @@ export const db = drizzle(queryClient, { schema });
 
 - `drizzle.config.ts` globs `./src/*/schema/*.ts`, outputs to
   `./src/migrations`, and reads `DATABASE_URL` from the validated env.
-- Generated migrations are committed and never edited by hand.
+- Generated migrations are committed and treated as read-only.
 - Scripts live in the db package: `db:generate`, `db:push`, `db:migrate`,
   `db:studio`, `db:seed`.
 
@@ -80,5 +80,5 @@ export const db = drizzle(queryClient, { schema });
 - Booleans default explicitly (`isOnSale: boolean("is_on_sale").default(false)`).
 - Use `uniqueIndex`/`.unique()` for slug- or code-uniqueness to mirror the
   domain constraint.
-- Query shapes are projected with `.select({...})` - never `select() *`
+- Query shapes are projected with `.select({...})` - specify only the necessary columns
   unless the whole row is truly needed.

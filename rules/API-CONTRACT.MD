@@ -1,8 +1,7 @@
 # API Contract Rule
 
 End-to-end type safety is mandatory. The contract (input schemas + inferred
-return types) lives once - shared between server and client - so you never
-hand-write a client type that duplicates the server.
+return types) lives once - shared between server and client - so you rely exclusively on inferred client types rather than duplicating server types by hand.
 
 Two stacks are in use. **They have different folder structures. Pick one per
 project and follow its dedicated rule file**:
@@ -16,9 +15,9 @@ project and follow its dedicated rule file**:
 
 1. **One source of truth for types.** Server input validators (Zod or TypeBox)
    are the single source for request/response shapes; client code consumes
-   inferred types. Never redeclare a DTO that the server owns.
-2. **No raw `fetch()`.** All data fetching goes through the typed client.
-3. **Derive types, don't duplicate.** `z.infer<typeof schema>` /
+   inferred types. Rely on the DTO declared by the server.
+2. **Use typed clients.** All data fetching goes through the typed client.
+3. **Derive types instead of duplicating them.** `z.infer<typeof schema>` /
    `Static<typeof schema>` / Drizzle `$inferSelect` produce the types.
 4. **Stable error envelope.** Failures return
    `{ success: false, code, message }`; client transport errors are normalized

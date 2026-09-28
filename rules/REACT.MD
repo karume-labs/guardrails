@@ -25,8 +25,7 @@ export const StatusBadge = ({ label, tone = "success" }: StatusBadgeProps): Reac
 
 - Keep components under ~150 lines. Extract children when larger.
 - Prefer composition (children, slots) over prop bloat.
-- No nested component definitions inside a render body - define at module
-  scope so they are not recreated every render.
+- Define components at module scope so they are not recreated every render, keeping them out of render bodies.
 
 ## Hooks
 
@@ -34,9 +33,9 @@ export const StatusBadge = ({ label, tone = "success" }: StatusBadgeProps): Reac
   and are named `useXxx`.
 - Hooks return derived state + the query (`{ ...query, items }`). See
   `rules/DATA-FETCHING.MD`.
-- Dependency arrays are complete: never suppress the linter with
+- Dependency arrays are complete: resolve missing dependencies rather than suppressing the linter with
   `// eslint-disable-line`.
-- Do not call hooks in loops or conditions.
+- Call hooks strictly at the top level outside of loops or conditions.
 
 ## Client vs Server components
 
@@ -50,7 +49,7 @@ export const ProductPage = async () => {
 };
 ```
 
-- Never put `"use client"` in `page.tsx`/`layout.tsx` route files.
+- Maintain route files (`page.tsx`/`layout.tsx`) as server components exclusively without `"use client"`.
 - Client components pass data down via props, not by fetching server-side.
 
 ## State

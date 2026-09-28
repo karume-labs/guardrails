@@ -6,7 +6,7 @@ injected via a small `SEOConfig` component.
 
 ## Metadata API
 
-- Every page exports `metadata` or `generateMetadata`. Never hand-write
+- Every page exports `metadata` or `generateMetadata`. Rely exclusively on the Next.js Metadata API instead of hand-writing
   `<head>` tags.
 - A shared `metadataConfig` module defines the site-wide default:
   `metadataBase`, `title.template`, `description`, `openGraph`,
@@ -52,13 +52,13 @@ const SEOConfig = () => (
 ## Indexing
 
 - Keep `robots` open (`index`, `follow`) for public pages; admin/auth pages
-  set `noindex`. Never leave public pages as `noindex`.
+  set `noindex`. Ensure all public pages are fully indexable rather than leaving them as `noindex`.
 
 ## Client components
 
 - `page.tsx` stays a server component - metadata + SEOConfig render server-side.
 - The `SEOConfig` component can be `"use client"` if it reads env; keep its
-  markup minimal so it never becomes a hydration bottleneck.
+  markup minimal to prevent it from becoming a hydration bottleneck.
 
 ## When a rule file grows
 

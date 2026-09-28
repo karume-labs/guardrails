@@ -5,30 +5,31 @@ description: Apply Karume Labs guardrails to implementation and review tasks in 
 
 # Karume Guardrails
 
-Route the task to the smallest relevant set of guardrails. This skill
-complements `AGENTS.md`; it does not replace project-local instructions.
+Route the task to the smallest relevant set of guardrails. This skill complements `AGENTS.md`.
 
-## Before editing
+## Goal
 
-1. Read the target project's `AGENTS.md` and any more-specific instruction
-   files. Project-local instructions take precedence.
-2. Locate the guardrail source the project uses. In this repository, read
-   `rules/AGENT-USAGE.MD`; in a consuming project, use its mirrored copy.
-3. Follow that file's load order: read the always-on rules, then only the
-   stack- and task-specific rules that apply. Read the matching file in
-   `examples/` before inventing a new shape.
+Correctly apply the target project's active guardrails based on their defined priority. Project-local instructions always take precedence.
 
-## While editing
+## Preparation
 
-- Preserve project-local conventions and make the smallest change that solves
-  the task.
-- Keep rule files focused and under roughly 150 lines. Update `AGENTS.md` and
-  `README.MD` when adding or splitting a rule.
-- Do not add tool-specific copies of this skill or duplicate rule content.
+- Locate and review the project's `AGENTS.md` and any domain-specific instructions.
+- Identify the project's guardrail source (e.g., `rules/AGENT-USAGE.MD` in this repository, or its mirrored copy in consumers).
+- Follow the defined load order from the source: read always-on rules first, followed by relevant stack/task-specific rules.
+- Review matching patterns in `examples/` before creating a new architectural shape.
 
-## Before finishing
+<example>
+**Task:** Create a new React component for user settings.
+**Action:** The agent reads `AGENTS.md` to understand conventions, checks `rules/AGENT-USAGE.MD` to see the loading priority, then reads `rules/REACT.MD` and `rules/STYLING.MD`. The agent reviews `examples/` for existing UI patterns before writing the component.
+</example>
 
-- Run the target project's documented format, lint, typecheck, and relevant
-  tests.
-- Report commands that do not exist or could not run; do not claim
-  verification that was not performed.
+## Editing Guidelines
+
+- Preserve project-local conventions and make the smallest change that solves the task.
+- Keep rule files focused and under roughly 150 lines. Update `AGENTS.md` and `README.MD` when adding or splitting a rule.
+- Maintain a single, centralized source of truth for all rules across tools and agents.
+
+## Verification
+
+- Run the target project's documented format, lint, typecheck, and relevant tests.
+- Only report commands and checks that were successfully executed.

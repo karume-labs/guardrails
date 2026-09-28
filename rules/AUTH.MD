@@ -3,13 +3,13 @@
 Authentication and authorization live at the **API boundary**, not in
 components. Two stacks: Elysia middleware and oRPC server guards
 Session/auth setup uses Better Auth or the platform's native
-auth; never hand-roll sessions.
+auth; rely on established session libraries instead of hand-rolling them.
 
 ## Auth setup
 
 - Auth config lives in `features/auth/services/config.ts` (Elysia) or
   `features/auth/server/...` (oRPC). Instantiate once, export the instance.
-- Route all auth hooks through it - never re-create auth clients in
+- Route all auth hooks through it - reuse the single exported instance instead of recreating auth clients in
   handlers or components.
 
 ```ts
@@ -60,15 +60,14 @@ export const runAsAdmin = async <T>(fn: () => Promise<T>): Promise<T> => {
   the guard after the public routes of the router.
 - **oRPC:** wrap handler bodies with `runAsAdmin(async () => { ... })`, or
   reuse the guard in shared sub-routers.
-- **Never** gate in the web UI alone - always enforce server-side.
+- **Always** enforce gating server-side; the web UI alone is insufficient.
 
 ## Error mapping
 
 - Throw typed errors (`UnauthorizedError`, `ForbiddenError`); the global
   `onError` plugin maps them to 401/403 envelopes. See
   `examples/ERROR-HANDLING.MD`.
-- Do not leak whether a user exists vs. has the wrong role - return a
-  generic 401/403 message.
+- Return a generic 401/403 message to prevent leaking whether a user exists vs. has the wrong role.
 
 ## Web side
 

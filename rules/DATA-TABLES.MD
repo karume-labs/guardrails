@@ -6,7 +6,7 @@ pagination/sort/search in URL state via **nuqs**.
 ## Architecture
 
 - A shared, presentational `DataTable` wrapper (`shared/components/ui/`)
-  renders `columns` + `data` with `useReactTable`. No business logic inside.
+  renders `columns` + `data` with `useReactTable`. Keep business logic outside this wrapper.
 - Column definitions are built by a **per-feature factory**
   (`<Feature>Columns.tsx`) that returns `ColumnDef<T, unknown>[]` and receives
   action callbacks as props.

@@ -1,7 +1,7 @@
 # Mantine Styling & UI Rules
 
 - Use Mantine components exclusively: `Button`, `Card`, `Group`, `Stack`, `Grid`.
-- **No dot notation for sub-components.** Mantine has moved away from `Grid.Col`, `Card.Section`, etc. - always import the sub-component directly as a top-level named export. `Grid.Col`/`Card.Section` are deprecated; `GridCol`/`CardSection` are the current form:
+- **Use direct imports for sub-components.** Mantine has moved away from `Grid.Col`, `Card.Section`, etc. - always import the sub-component directly as a top-level named export. `Grid.Col`/`Card.Section` are deprecated; `GridCol`/`CardSection` are the current form:
 
 ```tsx
 // Good
@@ -19,9 +19,9 @@ import { Grid, GridCol, Card, CardSection } from "@mantine/core";
 </Grid>
 ```
 
-- The dot-notation ban applies to any parent with exported sub-components. Use the top-level form: `GridCol` (not `Grid.Col`), `CardSection` (not `Card.Section`), `CarouselSlide` (not `Carousel.Slide`), `List` + `ListItem` (not `List.Item`), `SpotlightRoot` (not `Spotlight.Root`), `AccordionControl` (not `Accordion.Control`), `ComboboxOption` (not `Combobox.Option`), `TabsList`/`TabsTab`/`TabsPanel` (not `Tabs.List`/`Tabs.Tab`/`Tabs.Panel`).
+- The direct import rule applies to any parent with exported sub-components. Use the top-level form: `GridCol` (not `Grid.Col`), `CardSection` (not `Card.Section`), `CarouselSlide` (not `Carousel.Slide`), `List` + `ListItem` (not `List.Item`), `SpotlightRoot` (not `Spotlight.Root`), `AccordionControl` (not `Accordion.Control`), `ComboboxOption` (not `Combobox.Option`), `TabsList`/`TabsTab`/`TabsPanel` (not `Tabs.List`/`Tabs.Tab`/`Tabs.Panel`).
 
-- **No `className` or `style` on React components.** Use native Mantine style props: `mb`, `mt`, `p`, `px`, `bg`, `c`, `bd`, `fw`, `fz`, `tt`, `w`.
+- **Use native Mantine style props exclusively.** Use native Mantine style props: `mb`, `mt`, `p`, `px`, `bg`, `c`, `bd`, `fw`, `fz`, `tt`, `w` instead of `className` or `style`.
 
 ```tsx
 // Good
@@ -38,9 +38,9 @@ import { Grid, GridCol, Card, CardSection } from "@mantine/core";
 
 ## Spacing Rules & Best Practices
 
-1. **No Inline Styles:** Remove all instances of `style={{ ... }}`.
-2. **Minimize Style Props:** Avoid using Mantine style props (like margin or padding) as much as possible. Rely on layout components (like `Stack`, `Group`, `Flex`) and their native spacing properties (e.g., `gap`).
-3. **No Directional Spacing:** Never use single-direction margin or padding props (`ml`, `mr`, `mt`, `mb`, `pl`, `pr`, `pt`, `pb`). 
+1. **Use style props:** Replace instances of `style={{ ... }}` with layout components.
+2. **Prefer Layout Components:** Rely on layout components (like `Stack`, `Group`, `Flex`) and their native spacing properties (e.g., `gap`) over individual spacing props.
+3. **Use Symmetric Spacing:** Apply spacing exclusively via axis or global spacing rather than single-direction margin/padding props (`ml`, `mr`, `mt`, `mb`, `pl`, `pr`, `pt`, `pb`).
 4. **Only Axis/Global Spacing:** When spacing props are absolutely necessary, ONLY use the `x` (horizontal) and `y` (vertical) axes (i.e., `mx`, `my`, `px`, `py`) or global spacing (`m`, `p`).
 5. **Divisible by 2 and 4:** Any hardcoded numerical value used for spacing or layout must be strictly divisible by 2 and 4 (e.g., `4`, `8`, `12`, `16`, `24`, `32`).
 

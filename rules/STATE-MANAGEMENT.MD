@@ -1,7 +1,7 @@
 # State Management Rule
 
 State is layered by durability. URL state via **nuqs**, server cache via
-**TanStack Query**, ephemeral UI state via `useState`. Never invent a global
+**TanStack Query**, ephemeral UI state via `useState`. Rely on these layers instead of inventing a global
 store for data that belongs in one of those layers.
 
 ## URL state (nuqs)
@@ -24,7 +24,7 @@ const [page, setPage] = useQueryState("page", parseAsInteger.withDefault(1));
 
 ## Server state (TanStack Query)
 
-- Server data is never "local state" - it goes through the query layer with
+- Server data is strictly server state - it goes through the query layer with
   central keys. See `rules/DATA-FETCHING.MD`.
 - Filters living in the URL become **query-key inputs**:
 
@@ -36,7 +36,7 @@ const query = useProducts(search); // key: ["products", search]
 ## Ephemeral UI state
 
 - Dialogs, toggles, hover, input caret - use `useState`/`useReducer` locally.
-- Portal/confirm dialogs hold only the item being acted on, never copied data.
+- Portal/confirm dialogs hold only the item being acted on, rather than holding copied data.
 
 ```ts
 const [pendingDelete, setPendingDelete] = useState<AdminGame | null>(null);

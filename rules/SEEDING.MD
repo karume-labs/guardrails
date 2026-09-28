@@ -1,7 +1,7 @@
 # Seeding Rule
 
 Database seeding follows a feature-based pattern. Seeding is a
-db-package concern - never in app or client code.
+db-package concern - keep it entirely out of app or client code.
 
 ## Location
 
@@ -60,7 +60,7 @@ bun run db:seed:fresh           # db:migrate && db:seed --force
 - The db package exposes `"./seed": "./src/seed/index.ts"`
   as a package export.
 - Root `package.json` delegates via `bun --cwd packages/db db:seed`.
-- Frontend client code must never seed the database.
+- Ensure frontend client code is isolated from seeding the database.
 
 ## Seeder composition order
 

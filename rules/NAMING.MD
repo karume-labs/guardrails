@@ -8,7 +8,7 @@ locations without searching.
 - **kebab-case** everywhere: `feature-folder`, `shared/lib`, `routers/`.
 - Folder names are singular (`cart/`, `user/`) unless inherently plural
   (`migrations/`).
-- **No single-file folders.** Do not create a folder if it will only contain one file (e.g., use `constants.ts` instead of `constants/index.ts`).
+- **Consolidate single-file folders.** Collapse a folder into a single file if it would only contain one file (e.g., use `constants.ts` instead of `constants/index.ts`).
 
 ## Files
 
@@ -43,10 +43,10 @@ locations without searching.
 - Named exports only (`export const`). Default export reserved for Next.js
   route files (`page.tsx`, `layout.tsx`).
 - Re-export through feature index files (`features/<f>/index.ts`) to shorten
-  import paths; never create circular imports between features.
+  import paths; ensure dependency graphs between features remain strictly unidirectional.
 
-## Avoid
+## Anti-patterns
 
-- Abbreviations that aren't the domain language (`usr` vs `user`).
-- A single component/hook spread across several similarly named files -
+- Use full words rather than abbreviations that aren't the domain language (`usr` vs `user`).
+- Keep related components unified or properly split by role rather than spreading one hook across several similarly named files -
   split by role folder (`components/`, `services/`, `types/`).

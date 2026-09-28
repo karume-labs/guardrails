@@ -1,13 +1,13 @@
 # Data Fetching Rule
 
 All server state goes through **TanStack Query**. Every request between the
-frontend and backend goes through the **type-safe API client** (oRPC or Eden)
-- raw `fetch()` in components is banned.
+frontend and backend goes through the **type-safe API client** (oRPC or Eden).
+Exclusively use the type-safe client for network requests in components.
 
 ## Query keys
 
 Centralized per feature in `keys/` (or `keys.ts`), with `as const` for
-exhaustive type safety. Never inline query keys in hooks.
+exhaustive type safety. Define query keys centrally rather than inlining them in hooks.
 
 ```ts
 // features/games/keys/index.ts
@@ -76,7 +76,7 @@ export const useRecordGameSession = () => {
 - Use `useInfiniteQuery` for cursors/scroll feeds.
 - `getNextPageParam: (lastPage) => lastPage.nextCursor`; feed `nextCursor`
   back as `pageParam` in `queryFn`.
-- Flatten pages into a derived value, never mutate query data:
+- Flatten pages into a derived value; treat query data as immutable:
 
 ```ts
 export const useGamesFlat = (genre: string, q: string) => {
@@ -90,13 +90,12 @@ export const useGamesFlat = (genre: string, q: string) => {
 
 - Wrap error surfacing in a reusable `useQueryErrorToast` hook that fires once
   per error transition, not per render.
-- Surface a stable user-facing message; never dump raw API errors.
+- Surface a stable user-facing message rather than dumping raw API errors.
 
 ## Conventions
 
-- `queryFn` returns `res.data` and throws (or checks `res.error`) so React
-  Query can manage state. Never return the wrapper {
-  error, data } as data.
+  Query can manage state. Return `res.data` directly and let React Query manage the wrapper instead of returning {
+  error, data }.
 - Set `enabled: false` for queries that need a precondition (auth, selected
   id).
 - Use `staleTime`/`refetchInterval` deliberately; default to sensible values

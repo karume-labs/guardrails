@@ -2,13 +2,12 @@
 
 Strict discipline around `||`/`??` fallbacks and type casts. With end-to-end
 type safety, re-validated data, and schema defaults, most "just in case"
-fallbacks and casts are **unnecessary noise** - and the agent habit of adding
-them everywhere is forbidden.
+fallbacks and casts are **unnecessary noise** - and should be omitted entirely.
 
 ## Core principle
 
 If a value is guaranteed by the type system (validated env, API contract
-response, schema with a default), **do not add a fallback or a cast**. Trust
+response, schema with a default), **rely on the type natively without adding a fallback or cast**. Trust
 the type. Adding `?? ""`, `|| {}`, or `as Something` there hides real bugs and
 dilutes the contract.
 
@@ -32,7 +31,7 @@ not with an inline `|| "hardcoded"`.
 ## Trust the API contract
 
 Responses are typed end-to-end (oRPC/eden). Handler outputs and query results
-arrive typed - never re-cast or re-fallback them.
+arrive typed - use them as-is without re-casting or adding fallbacks.
 
 ```ts
 // Bad - data is typed; the cast and fallback are noise
@@ -45,7 +44,7 @@ if (res.error) throw res.error;
 return res.data;
 ```
 
-## Banned patterns
+## Anti-patterns
 
 - `x || fallback` / `x ?? fallback` where `x` is non-nullable by its type
   (validated env, `.notNull()` columns, contract-typed responses).
@@ -53,11 +52,11 @@ return res.data;
   `as unknown as T`, `as Record<string, unknown>` for validated bodies, and
   double casts.
 - `as any` in any form. If a cast feels needed, the **schema/contract is
-  wrong** - fix the source, don't paper over it.
+  wrong** - fix the source directly instead of papering over it.
 
 ## Allowed fallbacks
 
-Fallbacks are fine where the value is **genuinely absent**, never where the
+Fallbacks are fine where the value is **genuinely absent**, rather than where the
 type already guarantees it:
 
 - Optional-access before first load: `data?.pages.flatMap(...) ?? []` (query

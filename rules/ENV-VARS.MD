@@ -1,8 +1,8 @@
 # Environment Variables Rule
 
 Environment variables are parsed **once per package**, validated on module
-load, and exported as a typed `env` object. Raw `process.env` access outside
-these files is banned.
+load, and exported as a typed `env` object. Confine raw `process.env` access exclusively to
+these files.
 
 ## Layout
 
@@ -62,13 +62,11 @@ export const env = data as Static<typeof envSchema>;
 ## Rules
 
 1. **`process.env` is restricted to env modules only** (`env/index.ts` and
-   their direct validators). No other file - router, service, hook, config,
-   component - may read `process.env`. Everywhere else, import the validated
+   their direct validators). Restrict `process.env` reads exclusively to env modules. Everywhere else, import the validated
    `env` object and read from it.
-2. Never default secrets; default only harmless values (`PORT`, `NODE_ENV`).
-3. Prefix client-exposed vars with `NEXT_PUBLIC_` and never put secrets in
-   them.
+2. Default only harmless values (`PORT`, `NODE_ENV`) and omit defaults for secrets.
+3. Prefix client-exposed vars with `NEXT_PUBLIC_` and ensure they contain no secrets.
 4. `NODE_ENV` drives prod-only behavior (error leaking, logging) - read it
-   from `env`, never from `process.env` at call sites.
-5. Env values are validated and non-null by type - never add a `|| "..."` /
+   from `env`, rather than from `process.env` at call sites.
+5. Env values are validated and non-null by type - rely on their guaranteed presence rather than adding a `|| "..."` /
    `?? "..."` fallback at the call site (see `rules/FALLBACKS.MD`).
