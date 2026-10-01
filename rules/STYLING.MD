@@ -19,6 +19,7 @@ exactly one library per project (Mantine or shadcn) and stay consistent.
 
 - **Mantine:** See [MANTINE.MD](./MANTINE.MD) for Mantine-specific styling and UI rules.
 - **shadcn:** See [SHADCN.MD](./SHADCN.MD) for shadcn-specific styling rules.
+- **React Native Reusables:** See [REACT-NATIVE-REUSABLES.MD](./REACT-NATIVE-REUSABLES.MD) for shadcn-style rules in React Native.
 
 ## Theme tokens
 

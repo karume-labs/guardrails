@@ -42,6 +42,8 @@ available:
    - oRPC + Next.js → `ORPC.MD` + `VALIDATION.MD` (Zod)
    - Mantine UI → `STYLING.MD` (Mantine sections)
    - shadcn UI → `STYLING.MD` (shadcn sections)
+   - React Native / Expo → `REACT-NATIVE.MD`
+   - React Native Reusables → `REACT-NATIVE-REUSABLES.MD`
 4. Read **task-dependent** files when the task touches that concern:
    `REACT.MD`, `NEXTJS.MD`, `DATA-FETCHING.MD`, `STATE-MANAGEMENT.MD`,
    `DATA-TABLES.MD`, `SEO.MD`, `AUTH.MD`, `DRIZZLE.MD`, `SEEDING.MD`,

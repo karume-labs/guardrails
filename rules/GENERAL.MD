@@ -79,6 +79,10 @@ import { gamesQueryKeys } from "./../../../../features/games/keys";
 - **Gradients**: Use solid colors instead of gradients in styling unless specifically requested.
 - **Code Comments**: Focus comments exclusively on explaining complex logic rather than historical changes (e.g., omit `// moved from utils.ts`, `// during the auth refactor`).
 
+## Dependencies and node_modules
+
+- **Never edit code inside `node_modules` directly.** Any direct edits will be lost on the next reinstall. If a package needs modification, use a patch tool (like `patch-package` or `pnpm patch`), find an alternative package, or implement a local workaround.
+
 ## Always finish with verification
 
 When done editing, run the project's lint, format, and typecheck commands

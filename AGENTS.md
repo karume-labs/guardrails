@@ -33,6 +33,8 @@ entry point, and Claude Code uses it when the project has no `CLAUDE.md`.
 | `rules/AUTH.MD`                             | Better Auth, admin guards, protected routes  |
 | `rules/REACT.MD`                            | Components, props, server/client split       |
 | `rules/NEXTJS.MD`                           | App Router, routing, metadata                |
+| `rules/REACT-NATIVE.MD`                     | React Native, Expo, app.json plugins         |
+| `rules/REACT-NATIVE-REUSABLES.MD`           | React Native Reusables (shadcn style)        |
 | `rules/STYLING.MD`                          | Mantine + shadcn, no style overrides         |
 | `rules/DATA-FETCHING.MD`                    | TanStack Query, keys, service colocation     |
 | `rules/API-CONTRACT.MD`                     | End-to-end type safety (shared principles)   |

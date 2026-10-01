@@ -7,6 +7,7 @@ agents can load exactly the guidance they need for a given task.
 ## What this covers
 
 - **React 19 + Next.js App Router** - component patterns, server/client split
+- **React Native + Expo** - plugins, CNG, native folder constraints
 - **UI libraries** - Mantine and shadcn, with the rule that the library owns
   styling and you never override it (incl. no dot notation for Mantine
   sub-components)
@@ -61,6 +62,8 @@ point it at the guardrails as appropriate.
 - `AUTH.MD` - Better Auth, admin guards, protected routes.
 - `REACT.MD` - arrow functions, named exports, props typing.
 - `NEXTJS.MD` - App Router, routing, metadata.
+- `REACT-NATIVE.MD` - React Native, Expo, app.json plugins.
+- `REACT-NATIVE-REUSABLES.MD` - React Native Reusables (shadcn style).
 - `STYLING.MD` - Mantine or shadcn; no `className`/`style` overrides.
 - `DATA-FETCHING.MD` - TanStack Query, query keys, colocation.
 - `API-CONTRACT.MD` - shared end-to-end type safety principles and error envelope.
